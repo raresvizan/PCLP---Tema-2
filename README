@@ -1,0 +1,56 @@
+312CC - Visan Rares
+
+Problema 1:
+    Timp de lucru: o zi
+    Am folosit 3 functii:
+        generareKeywords - genereaza intr-o matrice char toate cuvintele
+        pe care le caut pentru a le sublinia; memorez cuvintele in asa fel
+        incat sa ma ajute la cautare (keywords de un singur cuv sunt primele,
+        dupa keywords de 1 cuv sau 2 si keywords de 2 cuv ultimele).
+        
+        cautareKeywords - cauta in string keywords cu ajutorul a 2 pointeri in
+        care memorez cuvantul actual si cel anterior cand este nevoie;
+        folosesc strtok pentru a verifica fiecare cuvant din string; retin poz
+        de inceput si de final a keywordului care trebuie subliniat.
+
+        afisare - contine intializari de variabile necesare pentru apelarea
+        functiilor de mai sus, apelari ale functiilor de mai sus; la final
+        pun ' ' in vectorul cu highlights unde nu exista '_'; afisez higlightul.
+    Functia afisare este apelata pentru fiecare string.
+
+Problema 2:
+    Timp de lucru: 3 ore + rezolvarea problemelor "Segmentation fault" = 5 zile
+    Memorez cuvintele citite in dictionar si le setez prioritatea 0.
+    Citesc stringul cuvant cu cuvant si verific in ce caz ma aflu (semn de punctuatie, cuvant*, cuvant,cuv).
+    Am folosit 3 functii:
+        semnePunctuatie - retuneaza 1 daca cuvantul este un semn de punctuatie;
+        daca da, il afisez, deoarece nu trebuie modificat.
+
+        cautareCuvant - cauta in dictionar existenta cuvantului citit; contine parametrul flag care imi spune daca sunt in cazul cuv* sau in cazul
+        obisnuit; in cazul cuv* verific daca exista in dictionar -> daca da, cresc prioritatea lui si il afisez; daca nu, il adaug in dictionar; 
+        in cazul obisnuit caut in dictionar cuvantul care se potriveste cu cel citit si care are prioritatea maxima, afisez cuvantul gait si ii cresc prioritatea; daca nu gasesc nicio potrivire il adaug in dictionar.
+
+        adaugareCuvant - este apelata de cautareCuvant in cazurile mentionate mai sus; realoc memorie in dictionar pentru noul cuvant care va fi adaugat si il adaug cu prioritatea 1.
+    Afisez cuvantul citit care a fost transformat de cautareCuvant.
+
+Problema 3:
+    Timp de lucru: 4 ore
+    Functia extragereBiti ma ajuta sa extrag dintr-un numar cati biti am nevoie si de pe ce pozitie vreau.
+    In variabila op extrag cei 2 biti care imi spun ce operatie sa efectuez. 00, 01, 10, 11 sunt de fapt numerele 0, 1, 2, 3. Apelez functia de pe poz op in vectorul de pointeri la functii.
+    Folosesc un vector de pointeri la functii pentru apelarea functiilor:
+        adunare - efectueaza operatia de adunare a numerelor a,b formate din bitii extrasi; memorez bitii numerelor in 2 vectori pentru a putea face adunarea; iau pe rand bitii si ii adun in functie de caz; la final e posibil ca adunarea sa depaseasca cei 4 biti care trebuie sa formeze rezultatul asa ca extrag doar 4 biti din rezultat.
+
+        interschimbare - memorez bitii numerului a intr-un vector; extrag in p1,p2 bitii din numarul b doi cate doi; p1,p2 reprezinta pozitiile unde interschimb bitii din numarul a;
+        fac interschimbarea si construiesc rezultatul.
+
+        rotatieStanga - memorez bitii numerului a intr-un vector;
+        mut cu o pozitie spre stanga fiecare bit de b ori, aducand bitul de pe poz 0 in vector pe poz 3; la final construiesc rezultatul.
+
+        xor - memorez bitii numerelor in 2 vectori; verific daca bitii de pe aceeasi pozitie in vectori sunt diferiti -> bitul va fi 1; altfel va fi 0; construiesc rezultatul.
+    Variabila rez contine rezultatul. Mut in a rezultatul pentru a continua operatiile.
+    Afisez rezultatul final.
+
+Wordle:
+    No time......
+
+An nou fericit! <3
